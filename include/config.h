@@ -21,5 +21,9 @@
 #define PULSES_PER_OUTPUT_REV  2100.0
  
 #define SPEED_CALC_INTERVAL_MS 100   // tính RPM mỗi 100ms
- 
+
+// ===================== CAN BUS =====================
+#define CAN_TX_PIN           16
+#define CAN_RX_PIN           17
+#define CAN_USE_NO_ACK_MODE  0
 #endif
