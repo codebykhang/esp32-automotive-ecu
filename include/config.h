@@ -18,7 +18,7 @@
 #define ENCODER_PIN_A         19
 #define ENCODER_PIN_B         18
  
-#define PULSES_PER_OUTPUT_REV  2100.0
+#define PULSES_PER_OUTPUT_REV  248.7
  
 #define SPEED_CALC_INTERVAL_MS 100   // tính RPM mỗi 100ms
 

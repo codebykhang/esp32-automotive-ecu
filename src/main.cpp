@@ -50,6 +50,7 @@ void setup()
 
 void loop()
 {
+    
     // ===== Cập nhật các chức năng hiện tại =====
     int throttlePercent = constrain(readThrottlePercent(), 0, 100);
     setMotor(throttlePercent);
@@ -92,20 +93,20 @@ void loop()
         lastPrint = now;
 
         Serial.printf(
-            "Ga:%u%% RPM:%.1f Chieu:%d "
-            "Nhien lieu:%u%% Nhiet do:%uC "
-            "Xi nhan:%u Den:%u Mode:%u CAN queue fail:%lu\n",
-            static_cast<unsigned>(data.throttlePct),
-            data.wheelRpm,
-            static_cast<int>(data.direction),
-            static_cast<unsigned>(data.fuelPct),
-            static_cast<unsigned>(data.coolantTempC),
-            static_cast<unsigned>(data.turnSignal),
-            static_cast<unsigned>(data.lampMode),
-            static_cast<unsigned>(canBusGetDriveMode()),
-            static_cast<unsigned long>(canBusGetTxFailCount())
-        );
+    "Ga:%u%% RPM:%.1f Chieu:%d "
+    "Nhien lieu:%u%% Nhiet do:%uC "
+    "Xi nhan:%u Den:%u Mode:%u CAN queue fail:%lu ENC_RAW:%ld\n",
+    static_cast<unsigned>(data.throttlePct),
+    data.wheelRpm,
+    static_cast<int>(data.direction),
+    static_cast<unsigned>(data.fuelPct),
+    static_cast<unsigned>(data.coolantTempC),
+    static_cast<unsigned>(data.turnSignal),
+    static_cast<unsigned>(data.lampMode),
+    static_cast<unsigned>(canBusGetDriveMode()),
+    static_cast<unsigned long>(canBusGetTxFailCount()),
+    getRawPulseCount()
+);
     }
-
     delay(10);
 }
